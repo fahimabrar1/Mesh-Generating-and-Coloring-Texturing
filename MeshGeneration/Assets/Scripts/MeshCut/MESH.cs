@@ -9,13 +9,16 @@ public class MESH : MonoBehaviour
 
     public Vector3 contactPoint;
 
+    MeshRenderer meshRenderer;
+    Texture texture;
     Vector3[] verts;
     Color[] colors;
+    Color color;
 
     void Start()
     {
         mesh = GetComponent<MeshFilter>().mesh;
-
+        meshRenderer = GetComponent<MeshRenderer>();
         
         verts = mesh.vertices;
         colors = new Color[verts.Length];
@@ -29,8 +32,12 @@ public class MESH : MonoBehaviour
 
     void Update()
     {
-        colors[NearestVertexTo(contactPoint)] = Color.red;
+        int i = NearestVertexTo(contactPoint);
+        colors[i] = Color.white;
         mesh.colors = colors;
+
+        mesh.colors = colors;
+        
     }
 
     int NearestVertexTo(Vector3 point)

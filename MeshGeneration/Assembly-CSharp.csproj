@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\PlaneMesh\ProceduralMesh.cs" />
     <Compile Include="Assets\Scripts\PlaneMesh\SixVerticesMesh.cs" />
     <Compile Include="Assets\Scripts\PlaneMesh\YVALUE.cs" />
+    <Compile Include="Assets\Scripts\SingleQuad.cs" />
     <Compile Include="Assets\Scripts\Voxel\VoxelData.cs" />
     <Compile Include="Assets\Scripts\Voxel\VoxelRendering.cs" />
     <Reference Include="Unity.Timeline.Editor">
