@@ -13,8 +13,8 @@ public class SingleQuad : MonoBehaviour
     Mesh mesh;
     Vector3[] vertices;
     Vector2[] uvs;
-    int[] triangles;
-    int[] triangles2;
+    List<int> triangles;
+    List<int> triangles2;
 
     private void Awake()
     {
@@ -54,8 +54,8 @@ public class SingleQuad : MonoBehaviour
     {
         vertices = new Vector3[8];
         uvs = new Vector2[8];
-        triangles = new int[2*6];
-        triangles2 = new int[6];
+        triangles = new List<int>();
+        triangles2 = new List<int>();
         int v = 0;
 
         
@@ -78,18 +78,27 @@ public class SingleQuad : MonoBehaviour
         {
             if(x<2)
             {
-                triangles[t] = v;
+                /*triangles[t] = v;
 
                 triangles[t + 1] = v + 4;
                 triangles[t + 2] = v + 1;
                 triangles[t + 3] = v + 1;
                 triangles[t + 4] = v + 4;
 
-                triangles[t + 5] = v + 5;
+                triangles[t + 5] = v + 5;*/
+                
+                triangles.Add(v);
+
+                triangles.Add(v + 4);
+                triangles.Add(v + 1);
+                triangles.Add(v + 1);
+                triangles.Add(v + 4);
+
+                triangles.Add(v + 5);
             }
             else
             {
-                t = 0;
+                /*t = 0;
                 triangles2[t] = v;
 
                 triangles2[t + 1] = v + 4;
@@ -97,7 +106,17 @@ public class SingleQuad : MonoBehaviour
                 triangles2[t + 3] = v + 1;
                 triangles2[t + 4] = v + 4;
 
-                triangles2[t + 5] = v + 5;
+                triangles2[t + 5] = v + 5;*/
+                
+                
+                triangles2.Add(v);
+
+                triangles2.Add(v + 4);
+                triangles2.Add(v + 1);
+                triangles2.Add(v + 1);
+                triangles2.Add(v + 4);
+
+                triangles2.Add(v + 5);
             }
             
             if(flip)
